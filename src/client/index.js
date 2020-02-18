@@ -1,4 +1,4 @@
-import {handleSubmit, add, darkskyAPICall, geonamesAPICall, departureNav } from './js/formHandler'
+import {handleSubmit, add, darkskyAPICall, geonamesAPICall, departureNav, pixabyAPICall } from './js/formHandler'
 
 
 import './styles/style.scss' 
@@ -9,4 +9,4 @@ import './styles/style.scss'
 
 document.getElementById('departure').addEventListener('change', departureNav)
 
-export { handleSubmit, add, darkskyAPICall, geonamesAPICall}
+export { handleSubmit, add, darkskyAPICall, geonamesAPICall, pixabyAPICall}

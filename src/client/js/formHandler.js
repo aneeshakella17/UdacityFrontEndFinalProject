@@ -12,9 +12,6 @@ function departureNav(){
 }
 
 
-
-
-
 function handleSubmit(event) {
     event.preventDefault()
 
@@ -28,6 +25,8 @@ function handleSubmit(event) {
     geonamesAPICall(sending).then(
         function(arr) {
             darkskyAPICall(arr);
+    }).then(function () {
+        pixabyAPICall(sending);
     });
 }
 
@@ -92,9 +91,28 @@ const darkskyAPICall = async (arr) => {
 
 
 
+const pixabyAPICall = async () => { 
+    var sending = {text: document.getElementById('name').value}
+    const response = await fetch('/getPicture', {
+        method: 'POST',
+        credentials: "same-origin",
+        body: JSON.stringify(sending),
+        headers: {"Content-Type": "application/json"}
+    });
+
+    try{
+        console.log("HIIIIIII")
+        const data = await response.json();
+        console.log(data)
+        document.getElementById('photoBox').style.backgroundImage =  "url('" + data.url + ')' 
+    } catch(error){
+        console.log("ERROR", error);
+    }
+}
+
 
 function add(a,b){
     return a + b;
 }
 
-export {handleSubmit, add, darkskyAPICall, geonamesAPICall, departureNav}
+export {handleSubmit, add, darkskyAPICall, geonamesAPICall, departureNav, pixabyAPICall}
