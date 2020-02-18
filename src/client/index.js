@@ -1,13 +1,12 @@
-import {handleSubmit} from './js/formHandler'
-import {checkForName} from './js/nameChecker'
+import {handleSubmit, add, darkskyAPICall, geonamesAPICall, departureNav } from './js/formHandler'
 
-import './styles/resets.scss' 
-import './styles/base.scss'
-import './styles/form.scss'
-import './styles/footer.scss'
-import './styles/header.scss'
 
-export {
-checkForName,
-handleSubmit
-}
+import './styles/style.scss' 
+// import './styles/base.scss'
+// import './styles/form.scss'
+// import './styles/footer.scss'
+// import './styles/header.scss'
+
+document.getElementById('departure').addEventListener('change', departureNav)
+
+export { handleSubmit, add, darkskyAPICall, geonamesAPICall}

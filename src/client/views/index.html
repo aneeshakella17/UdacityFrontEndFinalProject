@@ -3,57 +3,45 @@
     <head>
         <meta charset="utf-8">
         <title>Test</title>
-        <script type="text/javascript" src="/js/nameChecker.js"></script>
-        <script type="text/javascript" src="/js/formHandler.js"></script>
-        <link rel="stylesheet/scss" href="/styles/resets.scss">
-        <link rel="stylesheet/scss" href="/styles/base.scss">
-        <link rel="stylesheet/scss" href="/styles/header.scss">
-        <link rel="stylesheet/scss" href="/styles/form.scss">
-        <link rel="stylesheet/scss" href="/styles/footer.scss">
     </head>
 
     <body>
 
-        <header>
-            <div class="">
-                Logo
+        <div class="container">
+
+            <div class="header">
+
+                <input type="input" name="name" id='name' required />
+
+                <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
             </div>
-            <div class="">
-                navigation
+
+            <div class="photoBox"></div>
+
+
+            <div class="city_info">
+                <section>
+                    <strong>Form Results:</strong>
+                    <div id="lat"></div>
+                    <div id="lng"></div>
+                    <div id="cityName"></div>
+                    <div id="adminName"></div>
+                    <div id="countryName"></div>
+                </section>
             </div>
-        </header>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return Client.handleSubmit(event)">
-                </form>
-            <section>
+            <div class="timeHolder">
+                <div class="timeInput">
+                  <input type="date" id="departure" name="departure">
+                </div>
+                <div id = "countdown" class="countdown"> </div>
+            </div>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="lat"></div>
-                <div id="lng"></div>
-                <div id="cityName"></div>
-                <div id="adminName"></div>
-                <div id="countryName"></div>
-            </section>
-        </main>
+            <div class="weather_info">
+                <div id="minTemp"></div>
+                <div id="maxTemp"></div>
+            </div>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-
-        <script>
-            // Check that service workers are supported
-            if ('serviceWorker' in navigator) {
-                // Use the window load event to keep the page load performant
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
-                });
-            }
-        </script>
-        
+        </div>
     </body>
 </html>
