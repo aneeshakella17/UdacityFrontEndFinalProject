@@ -23,7 +23,6 @@ function analyze_ans(req, res){
   var newURL = req.body.url + req.body.text + "&maxRows=10&username=" + req.body.key
   
     fetch(newURL, { mode: 'no-cors' }).then( function (response)  {
-      console.log(response)
       return response.json()
     }).then(function (data){
         var geonames_data = data["geonames"]

@@ -1,9 +1,6 @@
-import {handleSubmit, add, darkskyAPICall, geonamesAPICall, departureNav, durationNav, pixabyAPICall } from './js/formHandler'
+import {handleSubmit, startdate_listener, enddate_listener} from './js/formHandler'
 
 
 import './styles/style.scss' 
 
-document.getElementById('startdate').addEventListener('change', departureNav)
-document.getElementById('enddate').addEventListener('change', durationNav)
-
-export { handleSubmit, add, darkskyAPICall, geonamesAPICall, pixabyAPICall}
+export { handleSubmit, startdate_listener, enddate_listener}
