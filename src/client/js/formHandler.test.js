@@ -1,9 +1,13 @@
-import { add, testPolarity} from "./formHandler";
+import {departureNav, add} from "./formHandler";
 
 
-describe("Add", () => {
-	test("is add working", () => {
-		expect(add(2, 2)).toBe(4)
+describe("Time working", () => {
+	test("is departureNav working", () => {
+		var falseTime = new Date(2020, 2, 12, 0, 0, 0, 0)
+		expect(Client.departureNav(falseTime)).toBe(false)
+		var trueTime = new Date(2021, 2, 12, 0, 0, 0, 0)
+        expect(Client.departureNav(trueTime)).toBe(true)
+
 	}); 
 
 });

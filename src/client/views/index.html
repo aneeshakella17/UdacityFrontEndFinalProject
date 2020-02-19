@@ -19,29 +19,52 @@
             <div id= "photoBox" class="photoBox"></div>
 
 
-            <div class="city_info">
-                <section>
-                    <strong>Form Results:</strong>
+            <div class="timeHolder">
+                <div class="timeInput">
+                    <div class="startdate_input">
+                        <input type="date" id="startdate" name="departure">
+                    </div>
+
+                    <div class="enddate_input">
+                        <input type="date" id="enddate" name="arrival">
+                    </div>
+
+                </div>
+
+                <div class="countdown">
+                    <div id="days_left"></div>
+                    <div id="duration"></div>
+                </div>
+
+            </div>
+
+            <div class="info">
+
+                <div class="city_info">
                     <div id="lat"></div>
                     <div id="lng"></div>
                     <div id="cityName"></div>
                     <div id="adminName"></div>
                     <div id="countryName"></div>
-                </section>
-            </div>
-
-            <div class="timeHolder">
-                <div class="timeInput">
-                  <input type="date" id="departure" name="departure">
                 </div>
-                <div id = "countdown" class="countdown"> </div>
-            </div>
 
-            <div class="weather_info">
-                <div id="minTemp"></div>
-                <div id="maxTemp"></div>
+                <div class = "weather_info">
+                    <div id="minTemp"></div>
+                    <div id="maxTemp"></div>
+                </div>
+
             </div>
 
         </div>
+
+        <script>
+    // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
+    </script>
     </body>
 </html>

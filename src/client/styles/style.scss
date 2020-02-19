@@ -1,100 +1,156 @@
-.container{
-	display:grid;
-	grid-template-columns: 300px 100px;
-	grid-template-rows: 200px 500px 300px;
-	grid-template-areas:
-	"hd hd hd hd hd hd hd hd"
-	"pb pb pb pb pb ti ti ti"
-	"ci ci ci ci ci wi wi wi";
-	border: 2px solid red;
+
+input:hover {
+  background-color: yellow;
+}
+@media (min-width: 700px){
+
+	.container{
+		display:grid;
+		grid-template-columns: 600px 100px;
+		grid-template-rows: 200px 200px 400px;
+		grid-template-areas:
+		"hd hd hd hd hd hd hd hd"
+		"pb pb pb pb pb ti ti ti"
+		"pb pb pb pb pb i i i" ;
+	}
 }
 
-.header{
-	display:flex;
-	align-items:center;
-  	background: black;
-  	justify-content: center;
-  	grid-area:hd;
+
+@media (max-width: 700px){
+	.container{
+		display:grid;
+		grid-template-rows: 200px 500px 200px 200px;
+		grid-template-areas:
+		"hd hd hd hd hd hd hd hd"
+		"pb pb pb pb pb pb pb pb"
+		"ti ti ti ti ti ti ti ti"
+		"i i i i i i i i" ;
+	}
 }
 
-.photoBox{
-    display:flex;
-    width: 100%;
-    height: 100%;
-    border:3px solid white;
-    background: #A8FB9D;
-    font-size:100px;
-    font-style: normal;
-    align-items:center;
-    background-size:cover;
-    background-repeat: no-repeat;
-    justify-content: center;
-    grid-area:pb;
-}
 
-.timeHolder{
-	display:grid;
-	grid-template-columns: 100%;
-	grid-template-rows: 20% 80%;
-	grid-area:ti;
-	grid-template-areas:
-	"input"
-	"co";
-}
 
-.timeInput{
-	display:flex;
-	background: purple;
-	grid-area:input;
-	justify-content: center;
-    align-items:center;
-	width: 100%;
-    height: 100%;
-}
+	.header{
+		display:flex;
+		align-items:center;
+	  	background: black;
+	  	justify-content: center;
+	  	grid-area:hd;
+	}
 
-#minTemp{
-    display:flex;
-	grid-area:min;
-	justify-content: center;
-	align-items:center;
-	width: 100%;
-    height: 100%;
-}
+	.photoBox{
+	    display:flex;
+	    width: 100%;
+	    height: 100%;
+	    border:3px solid white;
+	    background: #A8FB9D;
+	    font-size:100px;
+	    font-style: normal;
+	    align-items:center;
+	    background-size:cover;
+	    background-repeat: no-repeat;
+	    justify-content: center;
+	    grid-area:pb;
+	}
 
-#maxTemp{
-    display:flex;
-	grid-area:max;
-	justify-content: center;
-	align-items:center;
-	width: 100%;
-    height: 100%;
-}
+	.timeHolder{
+		display:grid;
+		grid-template-columns: 100%;
+		grid-template-rows: 20% 80%;
+		grid-area:ti;
+		grid-template-areas:
+		"input"
+		"co";
+	}
 
-.countdown{
-	display:flex;
-	background: orange;
-	grid-area:co;
-	width: 100%;
-	height: 100%;
-	align-items:center;
-	justify-content: center;
-}
+	.timeInput{
+		display:grid;
+		background: black;
+		grid-area:input;
+		width: 100%;
+	    height: 100%;
+	    grid-template-areas: "sd ed";
+	    color: white;
+	}
 
-.weather_info{
-	display: grid;
-	background: grey;
-	grid-area: wi;
-	grid-template-areas:
-	"min"
-	"max"
+	.startdate_input{
+		display:flex;
+		justify-content: center;
+	    align-items:center;
+	    width: 100%;
+	    height: 100%;
+		grid-area:sd;
+	}
 
-}
+	.enddate_input{
+		display:flex;
+		justify-content: center;
+	    align-items:center;
+	    width: 100%;
+	    height: 100%;
+		grid-area:ed;
+	}
 
-.city_info{
-	display:flex;
-  font-style: normal;
-  align-items:center;
-  justify-content: center;
-  background: green;
-  grid-area: ci;
-}
+	#minTemp{
+	    display:flex;
+		grid-area:min;
+		justify-content: center;
+		align-items:center;
+		width: 100%;
+	    height: 100%;
+	}
+
+	#maxTemp{
+	    display:flex;
+		grid-area:max;
+		justify-content: center;
+		align-items:center;
+		width: 100%;
+	    height: 100%;
+	}
+
+	.countdown{
+		display:flex;
+		background: black;
+		grid-area:co;
+		width: 100%;
+		height: 100%;
+		display:flex;
+	  	font-style: normal;
+	  	flex-direction: column;
+	  	align-items:center;
+	  	justify-content: center;
+	  	color: white;
+	}
+
+
+	.info {
+		display:grid;
+		grid-area:i;
+		grid-template-rows: 70% 30%;
+		grid-template-areas:
+		"ci"
+		"wi";
+		color: white;
+	}
+
+	.weather_info{
+		display: grid;
+		background: black;
+		grid-area:wi;
+		grid-template-areas:
+		"min"
+		"max";
+		color: white;
+	}
+
+	.city_info{
+	  display:flex;
+	  font-style: normal;
+	  flex-direction: column;
+	  align-items:center;
+	  justify-content: center;
+	  background: black;
+	  color: white;
+	  grid-area: ci;
+	}

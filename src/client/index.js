@@ -1,12 +1,9 @@
-import {handleSubmit, add, darkskyAPICall, geonamesAPICall, departureNav, pixabyAPICall } from './js/formHandler'
+import {handleSubmit, add, darkskyAPICall, geonamesAPICall, departureNav, durationNav, pixabyAPICall } from './js/formHandler'
 
 
 import './styles/style.scss' 
-// import './styles/base.scss'
-// import './styles/form.scss'
-// import './styles/footer.scss'
-// import './styles/header.scss'
 
-document.getElementById('departure').addEventListener('change', departureNav)
+document.getElementById('startdate').addEventListener('change', departureNav)
+document.getElementById('enddate').addEventListener('change', durationNav)
 
 export { handleSubmit, add, darkskyAPICall, geonamesAPICall, pixabyAPICall}
